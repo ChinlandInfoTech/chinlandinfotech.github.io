@@ -64,6 +64,14 @@
             position: relative; /* this is necessary for absolute positioning of children */
         }
 
+        @media (max-width: 768px) {
+            #main-home {
+                background-size: auto 100%; /* Adjust the background size */
+                background-position: center; /* Center the background image */
+                height: 50vh; /* Optional: Adjust the height as needed */
+            }
+        }
+
         .sub-title {
             font-size: 1.2em;
             margin: 10px 0;
@@ -91,7 +99,7 @@
         /* Media query for tablets/desktops */
         @media (min-width: 768px) {
             .main-btn {
-                margin-top: 600px; /* larger margin for bigger screens */
+                margin-top: 20px; /* larger margin for bigger screens */
             }
         }
 
@@ -324,8 +332,8 @@
         <!--
         <h1>Chinland InfoTech</h1>
         <p class="sub-title">AI, Machine Learning le Data Science.</p>
-         -->
-        <a href="#main-projects" class="main-btn">View Projects</a>
+
+        <a href="#main-projects" class="main-btn">View Projects</a> -->
         <p id="sliding-text">Kan projects pawl ih na volunteer ve duh asile, hi nah in contact hram aw. Email: admin@chinlandinfo.org</p>
     </div>
 
