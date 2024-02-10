@@ -52,7 +52,7 @@
 
         #main-home {
             height: 100vh;
-            background: url('img/home-img.png') no-repeat center center fixed;
+            background: url('img/home.png') no-repeat center center fixed;
             background-size: cover;
             display: flex;
             flex-direction: column;
@@ -69,6 +69,7 @@
             margin: 10px 0;
         }
 
+
         .main-btn {
             background-color: #007bff; /* change this line */
             color: white; /* change this line */
@@ -82,6 +83,23 @@
             cursor: pointer;
             border-radius: 5px; /* add this line */
             transition: background-color 0.3s ease;
+
+            /* Add this line */
+            margin-top: 600px; /* Adjust this value as needed */
+        }
+
+        /* Media query for tablets/desktops */
+        @media (min-width: 768px) {
+            .main-btn {
+                margin-top: 600px; /* larger margin for bigger screens */
+            }
+        }
+
+        /* Media query for large desktops */
+        @media (min-width: 1200px) {
+            .main-btn {
+                margin-top: 600px; /* even larger margin for very large screens */
+            }
         }
 
         .main-btn:hover {
@@ -303,8 +321,10 @@
     </div>
 
     <div id="main-home">
+        <!--
         <h1>Chinland InfoTech</h1>
         <p class="sub-title">AI, Machine Learning le Data Science.</p>
+         -->
         <a href="#main-projects" class="main-btn">View Projects</a>
         <p id="sliding-text">Kan projects pawl ih na volunteer ve duh asile, hi nah in contact hram aw. Email: admin@chinlandinfo.org</p>
     </div>
@@ -347,7 +367,7 @@
         </div>
     </div>
     
-    <div id="main-projects" class="main-section">
+    <div id="main-projects" class="main-section" id="pet-project">
         <h1>Pet Projects</h1>
         <div class="main-projects-container">
             <div class="main-project">
