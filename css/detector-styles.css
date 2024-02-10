@@ -1,0 +1,77 @@
+body {
+  background-color: #F5F7FA;
+  color: #333;
+}
+
+.title-color {
+  color: #5D92F4;
+}
+
+.textarea-container {
+  position: relative;
+  background-color: #fff;
+  border: 1px solid #D4D9DF;
+  border-radius: 4px;
+  padding: 15px;
+}
+
+#outputText {
+  color: SteelBlue;
+}
+
+.delete-button {
+  position: absolute;
+  top: 40px;
+  right: 10px;
+  margin-top: 10px;
+  color: #D9534F;
+}
+
+.box-header {
+  font-weight: bold;
+  margin-bottom: 5px;
+  text-align: center;
+  background-color: #5D92F4;
+  color: #fff;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+textarea.form-control {
+  min-height: 250px;
+}
+
+.check-button-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.check-button {
+  width: 150px;
+  background-color: #5D92F4;
+  color: #fff;
+}
+
+.processing-message {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.spinner {
+  margin: 0 auto;
+  width: 40px;
+  height: 40px;
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-left-color: #5D92F4;
+  border-radius: 50%;
+  animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
