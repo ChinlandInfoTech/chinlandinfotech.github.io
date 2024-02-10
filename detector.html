@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Language Detection</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="stylesheet" href="css/detector-styles.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <div class="row mt-5">
+      <div class="col-12">
+        <h1 class="text-center title-color">Language Detection</h1>
+      </div>
+    </div>
+    <div class="row mt-5">
+      <div class="col-6">
+        <div class="textarea-container">
+          <h5 class="box-header">Input Text</h5>
+          <textarea class="form-control" id="inputText" rows="5" placeholder="Type your text here..."></textarea>
+          <button class="btn delete-button" id="deleteButton" title="Clear Input"><i class="fas fa-trash"></i></button>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="textarea-container">
+          <h5 class="box-header">Predicted Language</h5>
+          <textarea class="form-control" id="outputText" rows="5" readonly></textarea>
+          <div class="processing-message">
+            <div class="spinner"></div>
+            <p id="processingText">Processing...</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 check-button-container">
+        <button class="btn btn-primary check-button" id="checkButton">Detect Language</button>
+      </div>
+    </div>
+  </div>
+  <script src="scripts/detector-scripts.js"></script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Translator</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="stylesheet" href="css/translator-styles.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+  <div class="container">
+    <div class="row mt-5">
+      <div class="col-12">
+        <h1 class="text-center">Translator</h1>
+        <p class="text-center" id="notify"> Himi Falam Translator hi Proof of Concept (PoC) version men a si.</p>
+      </div>
+    </div>
+    <div class="row mt-2">
+      <div class="col-6 offset-3">
+        <select class="form-control" id="translationDirection">
+          <option value="Falam-to-English">Falam to English</option>
+          <option value="English-to-Falam">English to Falam</option>
+        </select>
+      </div>
+    </div>
+    <div class="row mt-5">
+      <div class="col-6">
+        <div class="textarea-container">
+          <h5 class="box-header">Your Input (Falam/English)</h5>
+          <textarea class="form-control" id="inputText" rows="5" placeholder="Type your text here..."></textarea>
+          <button class="btn delete-button" id="deleteButton" title="Clear Input"><i class="fas fa-trash"></i></button>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="textarea-container">
+          <h5 class="box-header">Translation</h5>
+          <textarea class="form-control" id="outputText" rows="5" readonly></textarea>
+          <div class="processing-message">
+            <div class="spinner"></div>
+            <p id="processingText">Processing...</p>
+          </div>
+          <button class="btn copy-button" id="copyButton" title="Copy Output"><i class="far fa-copy"></i></button>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 check-button-container">
+        <button class="btn btn-primary check-button" id="translateButton">Translate</button>
+      </div>
+    </div>
+  </div>
+   <!-- Credits -->
+   <br>
+    <div class="container text-center">
+    <p class="text-muted"><small>Credits: Himi Translator hrang ah English-Falam translation data in pe tu</small>
+        <span style="color: #2f80f8"><b> Salai Lal Zui Lian</b></span> le
+        <span style="color: #2f80f8"><b> Saya Mal Sawm Thang</b></span>
+    <small>pawl parah tampi kan lungawi. Proof of Concept version a si ih, Language pair 8000 hrawng ih AI train mi asi. 
+      Translator tha ngaingai ding cun 50k-100k language pair ai tam thawi train a tul. Hi transaltor hin 
+      <b>Small Conversational sentence</b> lawng (words 15 ai tam lo) a translate thei asi.</small></p>
+      <span style="color: #2f80f8"><b> PoC a si vek in translate dik lo tampi a um thei.</b></span>
+  </div>
+
+
+  <!-- Error Modal -->
+  <div class="modal fade" id="errorModal" tabindex="-1" role="dialog" aria-labelledby="errorModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="errorModalLabel">Error</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body" id="errorModalMessage">
+          <!-- Error message will be inserted here -->
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<script src="scripts/translator-scripts.js"></script>
+</body>
+</html>

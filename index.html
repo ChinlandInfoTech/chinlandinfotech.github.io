@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+
+
+    <style>
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Roboto', sans-serif;
+        }
+        p {
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        #main-menu a, .main-btn, .main-about-btn, .project-button {
+            font-family: 'Lato', sans-serif;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa; /* Replace #ffffff with the desired background color */
+            margin: 0; /* Add this line to remove default margins */
+            padding: 0; /* Add this line to remove default padding */
+        }
+
+        #main-menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #343a40; /* change this line */
+            padding: 10px 0;
+            text-align: center;
+            z-index: 9999; /* added this line */
+        }
+
+        #main-menu a {
+            margin: 0 15px;
+            color: #ffffff; /* change this line */
+            text-decoration: none;
+            font-size: 1.1em;
+            transition: color 0.3s ease;
+        }
+
+        #main-menu a:hover {
+            color: #007bff;
+        }
+
+        #main-home {
+            height: 100vh;
+            background: url('img/home-img.png') no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #ffffff;
+            font-size: 3em;
+            text-align: center;
+            position: relative; /* this is necessary for absolute positioning of children */
+        }
+
+        .sub-title {
+            font-size: 1.2em;
+            margin: 10px 0;
+        }
+
+        .main-btn {
+            background-color: #007bff; /* change this line */
+            color: white; /* change this line */
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 10px 2px;
+            cursor: pointer;
+            border-radius: 5px; /* add this line */
+            transition: background-color 0.3s ease;
+        }
+
+        .main-btn:hover {
+            background-color: #0056b3;
+        }
+
+        #sliding-text {
+            /*font-family: 'Roboto', sans-serif;*/
+            font-family: 'Montserrat', sans-serif;
+            color: lightcyan; /* Change this to your preferred color */
+            font-size: 0.3em; /* Adjust the size as needed */
+            font-weight: bold; /* Makes the font bold */
+            font-style: italic; /* Makes the font italic */
+            /* other existing styles */
+            position: absolute;
+            bottom: 5%;
+            left: 0;
+            right: 0;
+            white-space: nowrap;
+            animation: slide 20s linear infinite;
+        }
+
+
+        @keyframes slide {
+            0% {
+                transform: translateX(100%);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+
+        .main-section {
+            padding: 50px 0;
+            background-color: #f8f9fa; /* add this line */
+        }
+
+        #main-about {
+            background-color: #ffffff; /* change this line */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .main-about-btn {
+            background-color: #007bff; /* change this line */
+            color: white; /* change this line */
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 10px 2px;
+            cursor: pointer;
+            border-radius: 5px; /* add this line */
+        }
+
+        .main-projects-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .main-project {
+            width: 20%;
+            margin: 1%;
+            border: 1px solid #ccc;
+            box-shadow: 2px 2px 6px 0px  #ccc;
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background-color: #ffffff; /* add this line */
+            color: #343a40; /* add this line */
+        }
+
+        .main-project img {
+            width: 100px; /* Fixed width */
+            height: 100px; /* Fixed height to maintain aspect ratio */
+            border-radius: 50%;
+        }
+
+        .main-project a {
+            color: white; /* change this line */
+            text-decoration: none;
+        }
+
+        #main-projects h1 {
+            text-align: center;
+        }
+
+        .project-button {
+            background-color: #007bff; 
+            color: #ffffff; /* Add this line */
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 10px 2px;
+            cursor: pointer;
+            border-radius: 5px; 
+            transition: background-color 0.3s ease;
+        }
+
+
+        .project-button:hover {
+            background-color: #0056b3;
+        }
+
+
+        #main-team {
+            background-color: #e5f0f7;
+            text-align: center;
+        }
+
+        .main-team-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 20px;
+        }
+
+        .main-team-member {
+            width: 20%;
+            margin: 1%;
+            border: 1px solid #ccc;
+            box-shadow: 2px 2px 6px 0px  #ccc;
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .main-team-member img {
+            width: 100px; /* Fixed width */
+            height: 100px; /* Fixed height to maintain aspect ratio */
+            border-radius: 50%;
+            object-fit: cover; /* Ensures the image covers the area without being stretched */
+        }
+
+        .main-team-member h2 {
+            color: #007bff;
+            margin-top: 15px;
+        }
+
+        .main-team-member p:first-of-type {
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .main-team-member p:last-of-type {
+            margin-top: 5px;
+        }
+
+        #main-footer {
+            background-color: #343a40; /* change this line */
+            color: #ffffff; /* add this line */
+            text-align: center;
+            padding: 20px;
+        }
+
+        .contact-container {
+            background-color: #ffffff;
+            border: 1px solid #ccc;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            padding: 40px;
+            margin: 20px auto;
+            width: 90%;
+            max-width: 800px;
+            text-align: center;
+        }
+
+        #main-contact i {
+            margin-right: 5px;
+            color: #007bff;
+        }
+
+        #main-contact a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        #main-contact a:hover,
+        #main-contact i:hover {
+            color: #0056b3;
+        }
+
+        .round-image {
+            border-radius: 50%; /* This makes the image round */
+            width: 100px; /* Adjust this value as needed */
+            height: 100px; /* Adjust this value as needed */
+            object-fit: cover; /* This ensures the image covers the area without being stretched */
+            display: block; /* Ensures the image is not inline */
+            margin: auto; /* Centers the image in its container */
+        }
+
+
+
+
+    </style>
+</head>
+<body>
+    <div id="main-menu">
+        <a href="#main-home">Home</a>
+        <a href="#main-about">About</a>
+        <a href="#main-projects">Projects</a>
+        <a href="#main-team">Team</a>
+        <a href="#main-contact">Contact</a>
+    </div>
+
+    <div id="main-home">
+        <h1>Chinland InfoTech</h1>
+        <p class="sub-title">AI, Machine Learning le Data Science.</p>
+        <a href="#main-projects" class="main-btn">View Projects</a>
+        <p id="sliding-text">Kan projects pawl ih na volunteer ve duh asile, hi nah in contact hram aw. Email: admin@chinlandinfo.org</p>
+    </div>
+
+    <div id="main-about" class="main-section">
+        <h1>Who We Are</h1>
+        <p>We are a group of people who are interested in information technology, data science, machine learning and artificial intelligence.</p>
+        <p>Lairam hrang ah mah tih theitawk le thiamtawk ih hnatuan kan tum.</p>
+        <button class="main-about-btn" onclick="location.href='#main-team'">Learn More</button>
+    </div>
+
+    <div id="main-projects" class="main-section">
+        <h1>Key Projects</h1>
+        <div class="main-projects-container">
+            <div class="main-project">
+                <img src="img/logo-detector.png" alt="Language Detector" class="round-image">
+                <h2>Language Detector</h2>
+                <p>Language Detection App. It can detect English, Falam, Hakha and others. Currently it is a proof of concept version.</p>
+                <a href="detector.html" class="project-button">View Project</a>
+            </div>
+            <div class="main-project">
+                <img src="img/logo-spellcheck.png" alt="Spell Checker" class="round-image">
+                <h2>Falam Spell Check</h2>
+                <p>This is a Web App to check Falam language spelling and apply auto correction. Currently it is a proof of concept version</p>
+                <a href="spellcheck.html" class="project-button">View Project</a>
+            </div>
+            <div class="main-project">
+                <img src="img/logo-translator.png" alt="Translator" class="round-image">
+                <h2>hellofalam AI Translator</h2>
+                <p>This is a Web App that can translate English into Falam and Falam to English. Currently it is a proof of concept version</p>
+                <a href="translator.html" class="project-button">View Project</a>
+            </div>
+            <div class="main-project">
+                <img src="img/logo-chat.png" alt="AI Chat" class="round-image">
+                <h2>AI Chat</h2>
+                <p>Creating an AI-powered knowledge access platform using Large Language Models (LLMs) with a Falam translation interface.</p>
+                <a href="ai-chat.html" class="project-button">View Project</a>
+            </div>
+            <!-- Add more projects as needed -->
+        </div>
+    </div>
+    
+    <div id="main-projects" class="main-section">
+        <h1>Pet Projects</h1>
+        <div class="main-projects-container">
+            <div class="main-project">
+                <img src="img/logo-detector.png" alt="Hymn Composer" class="round-image">
+                <h2>Hymn Composer</h2>
+                <p>An AI app where users input the first line of a hymn and receive a fully composed Falam hymn, bridging creativity and artificial intelligence.</p>
+                <a href="xxxx.html" class="project-button">View Project</a>
+            </div>
+            <!-- Add more projects as needed -->
+        </div>
+    </div>
+
+    <div id="main-team" class="main-section">
+        <h1>Team Members</h1>
+        <div class="main-team-container">
+            <div class="main-team-member">
+                <img src="img/team.png" alt="Team Member 1" class="round-image">
+                <h2>Technologists</h2>
+                <p>Role in the Team</p>
+                <p>A group interested in technology, focusing on the practical development and integration of AI and software systems, aiming for functional and user-friendly solutions.</p>
+            </div>
+            <div class="main-team-member">
+                <img src="img/team.png" alt="Team Member 2" class="round-image">
+                <h2>Linguists</h2>
+                <p>Role in the Team</p>
+                <p>Individuals interested in languages, especially Falam, contributing their knowledge for precise translations and effective language understanding in the AI's processing.</p>
+            </div>
+            <div class="main-team-member">
+                <img src="img/team.png" alt="Team Member 3" class="round-image">
+                <h2>Data Scientist</h2>
+                <p>Role in the Team</p>
+                <p>Enthusiasts in data analysis and modeling, crucial for training the AI and enhancing its performance in efficient information processing and analysis.</p>
+            </div>
+            <!-- Add more team members as needed -->
+        </div>
+    </div>
+    <div id="main-contact" class="main-section">
+        <div class="contact-container">
+            <h1>Contact Us</h1>
+            <p>Feel free to reach out through any of the following channels:</p>
+            <p><i class="fas fa-globe"></i> <strong>Website:</strong> <a href="www.chinlandinfo.org" target="_blank">www.chinlandinfo.org</a></p>
+            <p><i class="fab fa-facebook"></i> <strong>Facebook:</strong> <a href="www.facebook.com/chininfotech" target="_blank">facebook.com/chininfotech</a></p>
+            <p><i class="fab fa-facebook"></i> <strong>Facebook:</strong> <a href="www.facebook.com/nungliansum" target="_blank">facebook.com/nungliansum</a></p>
+            <p><i class="fab fa-github"></i> <strong>GitHub:</strong> <a href="www.github.com/ChinlandInfoTech/" target="_blank">github.com/ChinlandInfoTech</a></p>
+            <p><i class="fas fa-envelope"></i> <strong>Email:</strong> <a href="mailto:admin@chinlandinfo.org">admin@chinlandinfo.org</a></p>
+        </div>
+    </div>
+    
+
+    <div id="main-footer">
+        <p>admin@chinlandinfo.org</p>
+        <p>&copy; 2024 by Chinland InfoTech</p>
+    </div>
+</body>
+</html>
+

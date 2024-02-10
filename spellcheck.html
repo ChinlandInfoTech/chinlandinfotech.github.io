@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Spell Checker</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="stylesheet" href="css/spellcheck-styles.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <div class="row mt-5">
+      <div class="col-12">
+        <h2 class="text-center">Falam Cafangkom Checknak</h2>
+        <p class="text-center" id="notify"> Himi Falam Cafangkom checknak hi Proof of Concept (PoC) version men a si.</p>
+      </div>
+    </div>
+    <div class="row mt-5">
+      <div class="col-6">
+        <div class="textarea-container">
+          <h5 class="box-header">Input Text (Falam Cafangkom)</h5>
+          <textarea class="form-control" id="inputText" rows="5" placeholder="Type your text here..."></textarea>
+          <button class="btn delete-button" id="deleteButton" title="Clear Input"><i class="fas fa-trash"></i></button>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="textarea-container">
+          <h5 class="box-header">Corrected Text</h5>
+          <textarea class="form-control" id="outputText" rows="5" readonly></textarea>
+          <div class="processing-message">
+            <div class="spinner"></div>
+            <p id="processingText">Processing...</p>
+          </div>
+          <button class="btn copy-button" id="copyButton" title="Copy Output"><i class="far fa-copy"></i></button>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 check-button-container">
+        <button class="btn btn-primary check-button" id="checkButton">Check Spelling</button>
+      </div>
+    </div>
+    <div class="row mt-3">
+      <div class="col-12">
+        <h5 class="box-header">Correction</h5>
+        <textarea class="form-control" id="misspelledText" rows="5" readonly></textarea>
+        <p class="error-message" id="errorMessage"></p>
+        <p class="text-muted"><small>Credits: Himi Cafangkom checknak Web App hrangah cahram dangdang in petu  <span style="color: #2f80f8"><b>Mai Zi Tlen Thiang</b></span> parah tampi kan lungawi.</small></p>
+      </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Error Modal -->
+  <div class="modal fade" id="errorModal" tabindex="-1" role="dialog" aria-labelledby="errorModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="errorModalLabel">Error</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body" id="errorModalMessage">
+          <!-- Error message will be inserted here -->
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="scripts/spellcheck-scripts.js"></script>
+</body>
+</html>
