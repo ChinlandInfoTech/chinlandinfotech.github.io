@@ -485,7 +485,7 @@
         const height = imageSize === "square" ? 512 : 512;
 
         try {
-            const response = await fetch("https://asia-southeast1-api-key-hosting.cloudfunctions.net/generateImage", {
+            const response = await fetch("https://asia-southeast1-api-key-hosting.cloudfunctions.net/generateImages", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ 
