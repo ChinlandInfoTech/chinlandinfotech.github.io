@@ -702,7 +702,7 @@ function takeCard(t){
   const el=document.createElement('div'); el.className='take '+t.side;
   const who=t.name?esc(t.name):'Anonymous';
   let lines=`<div class="take-line like"><span class="ic">✓</span><span><b>${NAMES[t.side]}:</b> ${esc(t.like)}</span></div>`;
-  if(t.dislike) lines+=`<div class="take-line dis"><span class="ic">✕</span><span>${esc(t.dislike)}</span></div>`;
+  if(t.dislike){ const other=t.side==='m'?'r':'m'; lines+=`<div class="take-line dis"><span class="ic">✕</span><span><b>${NAMES[other]}:</b> ${esc(t.dislike)}</span></div>`; }
   el.innerHTML=`
     <div class="take-top"><span class="take-pill ${t.side}">Team ${NAMES[t.side]}</span><span class="take-name">${who}</span></div>
     ${lines}
